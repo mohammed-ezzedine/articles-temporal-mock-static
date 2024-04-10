@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a89c3137-f90d-4542-8fd2-39003292da7a" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/DummyActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/DummyActivityImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/DummyWorkflow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/DummyWorkflowImpl.java" afterDir="false" />
+    <list default="true" id="a89c3137-f90d-4542-8fd2-39003292da7a" name="Changes" comment="Add workflow and activity">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/ContextPropagationTracer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/WorkflowLoggerApiWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/me/ezzedine/mohammed/temporal/mockstatic/DummyWorkflowImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/me/ezzedine/mohammed/temporal/mockstatic/MockStaticContextPropagator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/DummyWorkflowImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ezzedine/mohammed/temporal/mockstatic/DummyWorkflowImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -44,8 +48,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.DummyWorkflowImplTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
@@ -56,6 +64,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -66,6 +79,43 @@
       <recent name="D:\Workspace\articles-repos\temporal-mock-static" />
       <recent name="D:\Workspace\articles-repos\temporal-mock-static\gradle\wrapper" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="me.ezzedine.mohammed.temporal.mockstatic" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DummyWorkflowImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;me.ezzedine.mohammed.temporal.mockstatic.DummyWorkflowImplTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DummyWorkflowImplTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -82,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712774704375</updated>
-      <workItem from="1712774705444" duration="1910000" />
+      <workItem from="1712774705444" duration="6325000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -92,7 +142,39 @@
       <option name="project" value="LOCAL" />
       <updated>1712776539783</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add workflow and activity">
+      <option name="closed" value="true" />
+      <created>1712776943639</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712776943639</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add workflow and activity">
+      <option name="closed" value="true" />
+      <created>1712777418988</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712777418988</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add workflow and activity">
+      <option name="closed" value="true" />
+      <created>1712778414055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712778414055</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add workflow and activity">
+      <option name="closed" value="true" />
+      <created>1712779195787</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712779195787</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +182,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Add workflow and activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add workflow and activity" />
   </component>
 </project>

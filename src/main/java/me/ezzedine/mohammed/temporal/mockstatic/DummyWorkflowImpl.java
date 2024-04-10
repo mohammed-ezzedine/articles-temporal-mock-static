@@ -11,7 +11,7 @@ public class DummyWorkflowImpl implements DummyWorkflow {
     private final DummyActivity activity = Workflow.newActivityStub(DummyActivity.class, ActivityOptions.newBuilder()
                     .setTaskQueue("mock-static").setScheduleToCloseTimeout(Duration.ofMinutes(1)).build());
 
-    private final Logger log = Workflow.getLogger(DummyWorkflowImpl.class);
+    private final Logger log = WorkflowLoggerApiWrapper.getLogger(DummyWorkflowImpl.class);
 
     private boolean waiting1;
 
@@ -25,6 +25,8 @@ public class DummyWorkflowImpl implements DummyWorkflow {
         Workflow.await(() -> !waiting1);
 
         activity.doSomething2();
+
+        log.info("workflow finished");
     }
 
     @Override
